@@ -1,3 +1,6 @@
-body {
-    text-align: left;
+.title {
+    font-size: 2em;
+}
+.task {
+    font-size: 1em;
 }

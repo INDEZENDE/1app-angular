@@ -1,3 +1,5 @@
+
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -17,10 +19,7 @@
   .example-button-row a {
     margin-right: 8px;
   }
-  .App {
-    /* text-align: center; */
-}
-
+ 
 .todo-wrapper {
     margin: 20px auto 20px auto;
     width: 500px;

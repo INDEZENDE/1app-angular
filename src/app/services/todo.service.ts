@@ -10,7 +10,7 @@ export class TodoService {
 
   constructor() {
     this.todos = [
-      new Todo(0, 'Tarea 0')
+      // new Todo(0, 'Tarea 0')
     ];
     this.nextId = 1;
   }
