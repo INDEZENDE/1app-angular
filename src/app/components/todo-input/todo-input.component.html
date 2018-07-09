@@ -1,0 +1,7 @@
+<div class="todo-input-wrapper">
+  <p>Ingresa la tarea</p>
+  <input matInput placeholder="Nombre de la tarea" type="text" [(ngModel)]="todoText" value={{todoText}}/>
+  <br>
+  <br>
+  <button class="btn btn-primary" mat-raised-button  color="accent"(click)="addTodo()">Enviar</button>
+</div>

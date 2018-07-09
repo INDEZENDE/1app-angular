@@ -3,10 +3,24 @@
 Se deben mostrar por separado las tareas completadas de las que están por completar.
 </p>
 <br>
-<form class="example-form">
+<!-- <form class="example-form">
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Nombre de la tarea" value="Tarea1">
   </mat-form-field>
   <button mat-raised-button color="primary">Agregar</button>
   
-</form>
+</form> -->
+
+
+<div class="App">
+  <div class="todo-wrapper">
+    <!-- <app-header></app-header> -->
+    <app-todo-input></app-todo-input>
+    <hr>
+    <br>
+    <p >Tareas ingresadas</p>
+    <div *ngFor="let todo of todoService.getTodos()">
+      <app-todo-item [todo]="todo"></app-todo-item>
+    </div>
+  </div>
+</div>
