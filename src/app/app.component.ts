@@ -1,8 +1,10 @@
 import { Component, Injectable } from '@angular/core';
+import { Todo } from './classes/todo';
 
 @Injectable()
 export class TodoService {
 
+  todos: Todo[];
   private nextId: number;
   constructor () {
     const todos = this.getTodos();
@@ -18,9 +20,8 @@ export class TodoService {
 public addTodos (text: string): void {
   const todo = new Todo (this.nextId, text);
   this.todos = this.getTodos();
-  todos.push(todo);
-
-  this.setLocalStorageTodos(todos)
+  this.todos.push(todo);
+  this.setLocalStorageTodos(this.todos);
   this.nextId++;
 }
 public getTodos(): Todo[] {
@@ -30,12 +31,12 @@ public getTodos(): Todo[] {
 
 public removeTodo (id: number): void {
   let todos = this.getTodos();
-  todos = todos.filter((todo) => todo.id != id);
+  todos = todos.filter((todo) => todo.id !== id);
   this.setLocalStorageTodos(todos);
 }
 
 private setLocalStorageTodos(todos: Todo[]): void {
-  localStorage.setItem('todo', JSON.stringify({todos: todos}))
+  localStorage.setItem('todo', JSON.stringify({todos: todos}));
 }
 
 }
@@ -47,5 +48,3 @@ private setLocalStorageTodos(todos: Todo[]): void {
 export class AppComponent {
   title = 'app';
 }
-
-
