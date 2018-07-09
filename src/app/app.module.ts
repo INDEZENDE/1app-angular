@@ -11,6 +11,11 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { N2Component } from './n2/n2.component';
 import { N3Component } from './n3/n3.component';
 import { N1Component } from './n1/n1.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TodoInputComponent } from './components/todo-input/todo-input.component';
+import { FormsModule } from '@angular/forms';
+import { TodoService } from './services/todo.service';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +30,7 @@ const appRoutes: Routes = [
     NavComponent,
     N2Component,
     N3Component,
-    N1Component
+    N1Component, HeaderComponent, TodoInputComponent, TodoItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +43,11 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

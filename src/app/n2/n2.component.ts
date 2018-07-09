@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-n2',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class N2Component implements OnInit {
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+
+
     const dateYear = new Date().getFullYear();
     const dateMonth = new Date().getMonth();
     const dateDay = new Date().getDate();
@@ -20,6 +23,6 @@ export class N2Component implements OnInit {
     console.log(dateMonth);
     console.log(dateDay);
     console.log(dateHour);
-    console.log(dateMinute)
+    console.log(dateMinute);
 
   } }
